@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 const initState = {
-    sta
+    state:{}
 }
 const reducer = (state = {}, action) => {
 

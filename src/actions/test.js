@@ -1,1 +1,1 @@
-export const queryData = val => ({type:'QUERY_DATA', val})
+export const queryData11 = val => ({type:'QUERY_DATA', val})

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { List } from 'antd';
-import { createStore } from 'redux';
+import store from '../store/store';
 class list extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            data:[
-                'test1'
-            ]
-        }
+        this.state = {}
+    }
+    componentDidMount(){
+        store.subscribe( () => {
+            //订阅之后再次render页面
+           this.setState({})
+        })
     }
     render() {
         return (
@@ -17,7 +19,7 @@ class list extends Component {
                     header={<div>Header</div>}
                     footer={<div>Footer</div>}
                     bordered
-                    dataSource={this.state.data}
+                    dataSource={store.getState().listData}
                     renderItem={item => (
                         <List.Item>
                             {item}

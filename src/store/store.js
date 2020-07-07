@@ -1,3 +1,6 @@
+
 import { createStore } from 'redux';
-let store = createStore();
-const state = store.getState();
+import reducer from '../reducers'
+let store = createStore(reducer);
+export default store
+// const state = store.getState();

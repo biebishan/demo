@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
+import store from '../store/store';
+import { queryData } from '../actions'
 class header extends Component{
     constructor(props){
         super(props)
@@ -7,8 +9,13 @@ class header extends Component{
 
         }
     }
+    componentDidMount(){
+        store.subscribe( () => {
+        })
+    }
     _handleQueryData = () => {
-        console.log('1232', this.props)
+        const action = queryData(['这是获取的数据'])
+        store.dispatch(action)
     }
     render(){
         return(

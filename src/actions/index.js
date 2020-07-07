@@ -1,0 +1,1 @@
+export const queryData = value => ({type:'query_data', value})

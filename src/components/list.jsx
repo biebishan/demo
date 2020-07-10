@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import { List, Button } from 'antd';
+import { List, Button, Input } from 'antd';
 import store from '../store/store';
+import apiObj from '../api/index'
+import { queryData, login } from '../actions'
+const { Search } = Input;
+const {
+    getData
+} = apiObj
 class list extends Component {
     constructor(props) {
         super(props)
         this.state = {}
     }
-    componentDidMount(){
-        store.subscribe( () => {
+    componentDidMount() {
+        store.subscribe(() => {
             //订阅之后再次render页面
-           this.setState({})
+            this.setState({})
         })
     }
     _handleTestSymbol = () => {
@@ -56,7 +62,7 @@ class list extends Component {
             age: 18
         }
         let handler = {
-            get: function(target, propKey){
+            get: function (target, propKey) {
                 return '多多'
             }
         }
@@ -64,8 +70,49 @@ class list extends Component {
 
         console.log(p1.gender)
     }
+    _handleTestPromise = () => {
+
+    }
     _handleTestReflect = () => {
-        
+
+    }
+    _handleTestIterator = () => {
+
+        let a1 = [1, 3, 5]
+        a1.foo = 'hello'
+        console.log(a1)
+        //for in语句以原始插入熟悉, 迭代对象的可枚举属性
+        for (let i in a1) {
+            console.log(i);
+        }
+         //for of语句遍历可迭代对象定义要迭代的数据, 迭代出的数据是基于可迭代对象的默认迭代器的
+        //  let iterable = new Map([['a', 1], ['b', 2], ['c', 3]])
+         let iterable = ['a', 'b', 'c']
+         for (let key of iterable) {
+            console.log(key);
+        }
+    }
+
+    _generatorTest = function *generatorTest(){
+        //Generator 是一个普通函数, 但是有两个特征, 一是function关键字与函数名之间有一个*, 二是函数内部使用yield表达式
+        // yield 'hello';
+        // yield 'world';
+        console.log('getData', getData)
+        //这里可以对比一下项目中dva的effects, 都是generator函数
+        yield getData();
+        console.log('顺利执行')
+        return '!!'
+
+    }
+    _handleTestGenerator = () => {
+        let res = this._generatorTest()
+        console.log(res.next())
+        console.log(res.next())
+        // console.log(res.next())
+    }
+    _handleOnSearch = (value) => {
+        const action = login(value)
+        store.dispatch(action)
     }
     render() {
         return (
@@ -75,6 +122,12 @@ class list extends Component {
                 <Button onClick={this._handleTestMap}>Map测试</Button><br />
                 <Button onClick={this._handleTestProxy}>Proxy测试</Button><br />
                 <Button onClick={this._handleTestReflect}>Reflect测试</Button><br />
+                <Button onClick={this._handleTestPromise}>Promise测试</Button><br />
+                <Button onClick={this._handleTestIterator}>Iterator测试</Button><br />
+                <Button onClick={this._handleTestGenerator}>Gennerator测试</Button><br />
+                <Search
+                    onSearch={this._handleOnSearch}
+                /><br/>
             </div>
         )
     }

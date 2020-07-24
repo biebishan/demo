@@ -85,29 +85,67 @@ class list extends Component {
         for (let i in a1) {
             console.log(i);
         }
-         //for of语句遍历可迭代对象定义要迭代的数据, 迭代出的数据是基于可迭代对象的默认迭代器的
+        //for of语句遍历可迭代对象定义要迭代的数据, 迭代出的数据是基于可迭代对象的默认迭代器的
         //  let iterable = new Map([['a', 1], ['b', 2], ['c', 3]])
-         let iterable = ['a', 'b', 'c']
-         for (let key of iterable) {
+        let iterable = ['a', 'b', 'c']
+        for (let key of iterable) {
             console.log(key);
         }
     }
 
-    _generatorTest = function *generatorTest(){
+    _generatorTest = function* generatorTest() {
         //Generator 是一个普通函数, 但是有两个特征, 一是function关键字与函数名之间有一个*, 二是函数内部使用yield表达式
         // yield 'hello';
         // yield 'world';
-        console.log('getData', getData)
+        // console.log('getData', getData)
         //这里可以对比一下项目中dva的effects, 都是generator函数
-        yield getData();
-        console.log('顺利执行')
+        // yield getData();
+        yield 'a'
+        yield 'b'
+        yield 'c'
         return '!!'
 
     }
+    _generatorTest1 = function run(fn) {
+        var gen = fn();
+        function next(err, data) {
+            var result = gen.next(data);
+            if (result.done) return;
+            console.log(result)
+            result.value(next);
+        }
+        next();
+    }
     _handleTestGenerator = () => {
-        let res = this._generatorTest()
-        console.log(res.next())
-        console.log(res.next())
+        // this._generatorTest1(this._generatorTest)
+        const Thunk = function (fn) {
+            return function (...args) {
+                return function (callback) {
+                    return fn.call(this, ...args, callback);
+                }
+            };
+        };
+        function f(a, cb) {
+            cb(a);
+        }
+        const ft = Thunk(f);
+        // ft = function (...args) {
+        //     return function (callback) {
+        //         return fn.call(this, ...args, callback);
+        //     }
+        // }
+        // ft(1) = function (callback) {
+        //     return fn.call(this, 1, callback);
+        // }
+        // ft(1)(console.log) = fn.call(this, 1, console.log)
+        ft(1)(console.log)
+        // let res = this._generatorTest()
+        // for(let key of res){
+        //     console.log(key)
+        //     console.log(res)
+        // }
+        // console.log(res.next())
+        // console.log(res.next())
         // console.log(res.next())
     }
     _handleOnSearch = (value) => {
@@ -127,7 +165,7 @@ class list extends Component {
                 <Button onClick={this._handleTestGenerator}>Gennerator测试</Button><br />
                 <Search
                     onSearch={this._handleOnSearch}
-                /><br/>
+                /><br />
             </div>
         )
     }

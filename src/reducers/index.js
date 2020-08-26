@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import apiObj from '../api'
 const initState = {
     initValue: '这是初始数据',
     listData: ['1111']
@@ -8,7 +9,7 @@ const reducer = (state = initState, action) => {
         case 'query_data':
             return Object.assign({}, state, { listData: action.value })
         case 'login':
-            console.log('11231')
+            console.log('11231');
         default:
             return state;
 

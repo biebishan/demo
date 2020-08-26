@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Header from './components/header.jsx'
-import List from './components/list.jsx'
+import Header from './components/Header.jsx'
+import Test from './components/Test.jsx'
+import PrimaryLayout from './components/layouts/PrimaryLayout.jsx'
 ReactDOM.render(
   <div>
     <Header />
-    <List />
+    <Test />
+    <PrimaryLayout /> 
   </div>,
   document.getElementById('root')
 );

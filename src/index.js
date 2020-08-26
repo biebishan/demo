@@ -7,9 +7,9 @@ import Test from './components/Test.jsx'
 import PrimaryLayout from './components/layouts/PrimaryLayout.jsx'
 ReactDOM.render(
   <div>
-    <Header />
-    <Test />
     <PrimaryLayout /> 
+    {/* <Header /> */}
+    {/* <Test /> */}
   </div>,
   document.getElementById('root')
 );

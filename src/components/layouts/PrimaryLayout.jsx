@@ -1,17 +1,22 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Layout, Button, Transfer, Tree } from 'antd';
-import './PrimaryLayout.css';
-import { CSSTransitionGroup  } from 'react-transition-group';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import './PrimaryLayout.less';
+import Test from '../Test';
 const { Header, Footer, Sider, Content } = Layout;
 function PrimaryLayout() {
-  
+
     return (
         <div className='primaryLayout'>
-            <div className='primaryLayout_btn'>
-                <Button>prev</Button>
-                <Button>next</Button>
-            </div>
+            <Layout>
+                <Sider>
+                <Test/>   
+                </Sider>
+                <Layout>
+                    <Header>Header</Header>
+                    <Content>Code</Content>
+                    <Footer>Footer</Footer>
+                </Layout>
+            </Layout>
         </div>
     )
 }

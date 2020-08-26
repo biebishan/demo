@@ -4,6 +4,7 @@ import store from '../store/store';
 import apiObj from '../api/index'
 import { queryData, login } from '../actions'
 import { T } from 'antd/lib/upload/utils';
+import './Test.less'
 const { Search } = Input;
 const {
     getData
@@ -261,7 +262,7 @@ class Test extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='asideBtnWrapper'>
                 <Button onClick={this._handleTestSymbol}>Symbol测试</Button><br />
                 <Button onClick={this._handleTestSet}>Set测试</Button><br />
                 <Button onClick={this._handleTestMap}>Map测试</Button><br />

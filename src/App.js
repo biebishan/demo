@@ -9,7 +9,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header.jsx'
-import List from './components/List.jsx'
+// import List from './components/List.jsx'
 import store from './store/store'
 import { Provider } from 'react-redux'
 import { Divider } from 'antd';
@@ -18,7 +18,7 @@ const App = () => {
         <Provider store={store}>
             <div>
                 <Header />
-                <List />
+                {/* <List /> */}
             </div>
         </Provider>
 

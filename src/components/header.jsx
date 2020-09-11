@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'antd';
 import store from '../store/store';
 import { queryData } from '../actions'
-class header extends Component{
+class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -25,4 +25,4 @@ class header extends Component{
         )
     }
 }
-export default header
+export default Header

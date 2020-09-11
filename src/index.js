@@ -5,13 +5,14 @@ import * as serviceWorker from './serviceWorker';
 import Header from './components/Header.jsx'
 import Test from './components/Test.jsx'
 import PrimaryLayout from './components/layouts/PrimaryLayout.jsx'
+import RouterList from './routeConfig'
 ReactDOM.render(
   <div>
     <PrimaryLayout /> 
     {/* <Header /> */}
     {/* <Test /> */}
   </div>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

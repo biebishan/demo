@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react"
-import Rain from "../product/Rain"
-import Sunny from "../product/Sunny"
-import Wind from "../product/Wind"
+import Rain from "@component/Rain"
+import Sunny from "@component/Sunny"
+import Wind from "@component/Wind"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 export const routes = [
 	{

@@ -3,9 +3,6 @@ import { List, Button, Input } from 'antd';
 import store from '../store/store';
 import apiObj from '../api/index'
 import { queryData, login } from '../actions'
-import Rain from '../product/Rain';
-import Sunny from '../product/Sunny';
-import Wind from '../product/Wind';
 import './Test.less';
 import {
     BrowserRouter as Router,

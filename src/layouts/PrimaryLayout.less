@@ -26,15 +26,21 @@
             padding: 0;
             >li{
                 list-style: none;
-                padding: 8px 12px;
                 text-align: center;
-                background-color: #272122;
+				background-color: #272122;
+				&:hover{
+					background-color: rgba(64, 169, 255, 0.6);
+				}
+				&:focus-within{
+					background-color: rgba(64, 169, 255, 0.6);
+				}
                 a{
                     color:#fff;
                     display: inline-block;
-                    width: 100%;
+					width: 100%;
+					padding: 8px 12px;
                     height: 100%;
-                }
+				}
             }
         }
     }

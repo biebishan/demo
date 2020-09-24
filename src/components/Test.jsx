@@ -3,8 +3,16 @@ import { List, Button, Input } from 'antd';
 import store from '../store/store';
 import apiObj from '../api/index'
 import { queryData, login } from '../actions'
-import { T } from 'antd/lib/upload/utils';
-import './Test.less'
+import Rain from '../product/Rain';
+import Sunny from '../product/Sunny';
+import Wind from '../product/Wind';
+import './Test.less';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 const { Search } = Input;
 const {
     getData
@@ -145,7 +153,7 @@ class Test extends Component {
                 };
             }
         };
-        for( let value of obj){
+        for (let value of obj) {
             console.log(value)
         }
     }
@@ -218,42 +226,42 @@ class Test extends Component {
 
     _handleTestClass = () => {
         class Person {
-            constructor(name, age){
+            constructor(name, age) {
                 this.name = name;
                 this.age = age;
             }
-            toString(){
-                return '('+ this.name + ',' + this.age + ')'
+            toString() {
+                return '(' + this.name + ',' + this.age + ')'
             }
             //静态方法不会被实例继承
             static classMethod() {
-                        return 'hello';
-                    }
+                return 'hello';
+            }
         }
         const p1 = new Person('jack', '18')
         console.log('p1', p1.toString())
-       class Point {
-           constructor(name, age){
-               this.name = name;
-               this.age = age;
-           }
-           static hello() {
-               console.log('hello world')
-           }
-       }
-       class ColorPoint extends Point{
-           constructor(x, y, color){
-               super(x, y)
-               this.color = color
+        class Point {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            static hello() {
+                console.log('hello world')
+            }
+        }
+        class ColorPoint extends Point {
+            constructor(x, y, color) {
+                super(x, y)
+                this.color = color
 
-           }
-           toString(){
-            return this.color + ' ' + super.toString();
-           }
-       }
-       const point1 = new ColorPoint('lili', 18, 'pink')
-       console.log('point1', point1)
-       console.log('ColorPoint', ColorPoint.hello)
+            }
+            toString() {
+                return this.color + ' ' + super.toString();
+            }
+        }
+        const point1 = new ColorPoint('lili', 18, 'pink')
+        console.log('point1', point1)
+        console.log('ColorPoint', ColorPoint.hello)
         //子类必须在constructor方法中调用super方法，否则new实例时会报错。因为子类没有自己的this对象，而是继承父类的this对象。
         //如果不调用super函数，子类就得不到this对象。super()作为父类的构造函数，只能出现在子类的constructor()中；
         //但是super指向父类的原型对象，可以调用父类的属性和方法

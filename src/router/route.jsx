@@ -1,23 +1,24 @@
 import React, { Component, useState, useEffect } from "react"
-import Rain from "@component/Rain"
-import Sunny from "@component/Sunny"
-import Wind from "@component/Wind"
+import ReactDOM from "react-dom"
+import Product from '@/pages/product/index'
+import About from '@/pages/about/index'
+import User from '@/pages/user/index'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 export const routes = [
 	{
-		path: "/rain",
-		component: Rain,
-		name: "Rain"
+		path: "/product",
+		component: Product,
+		name: "Product"
 	},
 	{
-		path: "/sunny",
-		component: Sunny,
-		name: "Sunny"
+		path: "/about",
+		component: About,
+		name: "About"
 	},
 	{
-		path: "/wind",
-		component: Wind,
-		name: "Wind"
+		path: "/user",
+		component: User,
+		name: "User"
 	}
 ]
 
@@ -25,9 +26,9 @@ export class RouteMap extends Component {
 	render() {
 		return (
 			<Route>
-				<Route path="/rain" component={Rain} />
-				<Route path="/sunny" component={Sunny} />
-				<Route path="/wind" component={Wind} />
+				<Route path="/product" component={Product} />
+				<Route path="/about" component={About} />
+				<Route path="/user" component={User} />
 			</Route>
 		)
 	}

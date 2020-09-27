@@ -13,12 +13,12 @@ import Header from './components/Header.jsx'
 import store from './store/store'
 import { Provider } from 'react-redux'
 import { Divider } from 'antd';
+import PrimaryLayout from "./layouts/PrimaryLayout.jsx"
 const App = () => {
     return (
         <Provider store={store}>
             <div>
-                <Header />
-                {/* <List /> */}
+                <PrimaryLayout />
             </div>
         </Provider>
 

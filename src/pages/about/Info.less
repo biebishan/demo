@@ -83,21 +83,34 @@
 			background-color: #fff;
 		}
 		.aboutWrapper_tabModule {
-            width: 400px;
+			width: 400px;
 			h1 {
 				font-weight: 700;
 				font-size: 26px;
 			}
 			ul {
-                padding: 0;
-                overflow: hidden;
+				padding: 0;
+				overflow: hidden;
 				li {
-                    list-style: none;
-                    float: left;
-                    margin-top: 12px;
-                    margin-right: 20px;
+					list-style: none;
+					float: left;
+					margin-top: 12px;
+					margin-right: 20px;
 				}
 			}
 		}
+	}
+	// 进场前的样式
+	.fade-enter{
+		opacity: 0;
+		transition: all 10s linear;
+	}
+	.fade-enter-active {
+		opacity: 1;
+		transition: all 10s linear;
+	}
+	.fade-enter-done {
+		opacity: 1;
+		transition: all 10s linear;
 	}
 }

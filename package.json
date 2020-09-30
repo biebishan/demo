@@ -44,6 +44,7 @@
     "less-loader": "5",
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "0.9.0",
+    "mysql": "^2.18.1",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -79,7 +80,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "dev": "webpack --config ./config/webpack.dev.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -97,6 +99,7 @@
     ]
   },
   "devDependencies": {
+    "http-proxy-middleware": "^1.0.5",
     "node-fetch": "^2.6.0"
   },
   "jest": {

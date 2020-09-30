@@ -10,7 +10,7 @@ import yx from "@assets/yx.svg"
 import qz from "@assets/qz.svg"
 import zhouqiu from "@assets/zhongqiu.jpg"
 import fanke from "@assets/fanke.gif"
-import { transform } from "lodash"
+import { CSSTransition } from "react-transition-group"
 const { Meta } = Card
 
 class About extends Component {
@@ -18,8 +18,10 @@ class About extends Component {
 		super(props)
 		this.state = {
 			index: 0,
-			initValue:0,
-			translateValue:0,
+			initValue: 0,
+			translateValue: 0,
+			showInfoType: "website",
+			showInfo: false,
 			list: [
 				{
 					id: "tedfd",
@@ -50,14 +52,153 @@ class About extends Component {
 	}
 	componentDidMount() {}
 	changeTab = (e, index) => {
-		let value = 200*index + this.state.initValue
+		let value = 200 * index + this.state.initValue
 		this.setState({
-			translateValue:value
+			translateValue: value
 		})
+		switch (index) {
+			case 0: {
+				this.setState({
+					showInfoType: "website",
+				})
+				break
+			}
+			case 1: {
+				this.setState({
+					showInfoType: "mall",
+				})
+				break
+			}
+			case 2: {
+				this.setState({
+					showInfoType: "application",
+				})
+				break
+			}
+			case 3: {
+				this.setState({
+					showInfoType: "sale",
+				})
+				break
+			}
+			case 4: {
+				this.setState({
+					showInfoType: "picture",
+				})
+				break
+			}
+			default:
+				break
+		}
 	}
 	render() {
 		const arr = [1, 2, 3]
-		const { list, translateValue } = this.state
+		const { list, translateValue, showInfoType } = this.state
+		const Info0 = (
+			<div className={"aboutWrapper_tabInfo"}>
+				<div className={"aboutWrapper_tabWebsite"}></div>
+				<div className={"aboutWrapper_tabModule"}>
+					<h1>各行各业模板提供选择</h1>
+					<ul>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+						<li>人力资源0</li>
+					</ul>
+				</div>
+			</div>
+		)
+		const Info1 = (
+			<div className={"aboutWrapper_tabInfo"}>
+				<div className={"aboutWrapper_tabWebsite"}></div>
+				<div className={"aboutWrapper_tabModule"}>
+					<h1>各行各业模板提供选择</h1>
+					<ul>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+						<li>人力资源1</li>
+					</ul>
+				</div>
+			</div>
+		)
+		const Info2 = (
+			<div className={"aboutWrapper_tabInfo"}>
+				<div className={"aboutWrapper_tabWebsite"}></div>
+				<div className={"aboutWrapper_tabModule"}>
+					<h1>各行各业模板提供选择</h1>
+					<ul>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+						<li>人力资源2</li>
+					</ul>
+				</div>
+			</div>
+		)
+		const Info3 = (
+			<div className={"aboutWrapper_tabInfo"}>
+				<div className={"aboutWrapper_tabWebsite"}></div>
+				<div className={"aboutWrapper_tabModule"}>
+					<h1>各行各业模板提供选择</h1>
+					<ul>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+						<li>人力资源3</li>
+					</ul>
+				</div>
+			</div>
+		)
+		const Info4 = (
+			<div className={"aboutWrapper_tabInfo"}>
+				<div className={"aboutWrapper_tabWebsite"}></div>
+				<div className={"aboutWrapper_tabModule"}>
+					<h1>各行各业模板提供选择</h1>
+					<ul>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+						<li>人力资源4</li>
+					</ul>
+				</div>
+			</div>
+		)
 		return (
 			<div className={"aboutWrapper"}>
 				<div className={"aboutWrapper_bgc"}>
@@ -123,34 +264,18 @@ class About extends Component {
 						<li onClick={(e) => this.changeTab(e, 4)}>图片模板</li>
 						<div
 							className={"aboutWrapper_tabBorder"}
-							style={{ 
+							style={{
 								transform: `translateX(${translateValue}px)`,
-								transition:'all 0.3s'
+								transition: "all 0.3s"
 							}}
 						></div>
 					</ul>
 				</div>
-				<div className={"aboutWrapper_tabInfo"}>
-					<div className={"aboutWrapper_tabWebsite"}>
-
-					</div>
-					<div className={"aboutWrapper_tabModule"}>
-						<h1>各行各业模板提供选择</h1>
-						<ul>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-							<li>人力资源</li>
-						</ul>
-					</div>
-				</div>
+				{showInfoType === "website" && Info0}
+				{showInfoType === "mall" && Info1}
+				{showInfoType === "application" && Info2}
+				{showInfoType === "sale" && Info3}
+				{showInfoType === "picture" && Info4}
 			</div>
 		)
 	}

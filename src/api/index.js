@@ -5,18 +5,19 @@ function geneRealApi(api) {
     return function () {
         let method = api.split(' ')[0];
         let apiUrl = api.split(' ')[1];
+        // let url = `http://81.68.220.42:3333${apiUrl}`;
         let url = `http://localhost:3333${apiUrl}`;
         let parma = {
 
         }
         return (
             axios[method](url, parma)
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
+                // .then(function (response) {
+                //     console.log(response);
+                // })
+                // .catch(function (error) {
+                //     console.log(error);
+                // })
         )
     }
 }

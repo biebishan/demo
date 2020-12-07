@@ -222,7 +222,9 @@ class About extends Component {
 						<Carousel autoplay>
 							<div>
 								<img src={zhouqiu} alt="" />
-							</div>
+							</div> 
+
+
 							<div>
 								<img src={fanke} alt="" />
 							</div>

@@ -5,13 +5,24 @@ import * as serviceWorker from "./serviceWorker"
 import Header from "./components/Header.jsx"
 import Test from "./components/Test.jsx"
 import PrimaryLayout from "./layouts/PrimaryLayout.jsx"
-import { BrowserRouter as Router, Switch, Route, Link, Redirect  } from "react-router-dom"
-import App from "./App"
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	Redirect
+} from "react-router-dom"
+import App from "./App";
+// import Routes from
+import store from './store/store'
+import { Provider } from "react-redux"
 ReactDOM.render(
-	<Router>
-		<Redirect from="/" to="/product"></Redirect>
-		<Route path="/" component={App}></Route>
-	</Router>,
+	<Provider store={store}>
+		<Router>
+			<Redirect from="/" to="/product"></Redirect>
+			<Route path="/" component={App}></Route>
+		</Router>
+	</Provider>,
 	document.getElementById("root")
 )
 

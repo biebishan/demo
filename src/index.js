@@ -12,16 +12,12 @@ import {
 	Link,
 	Redirect
 } from "react-router-dom"
-import App from "./App";
-// import Routes from
+import Routes from './router.config'
 import store from './store/store'
 import { Provider } from "react-redux"
 ReactDOM.render(
 	<Provider store={store}>
-		<Router>
-			<Redirect from="/" to="/product"></Redirect>
-			<Route path="/" component={App}></Route>
-		</Router>
+		<Routes/>
 	</Provider>,
 	document.getElementById("root")
 )

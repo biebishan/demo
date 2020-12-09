@@ -12,7 +12,6 @@ import {
 	Link,
 	NavLink
 } from "react-router-dom"
-import { routes, RouteMap } from "@/router/route"
 const { Header, Footer, Sider, Content } = Layout
 function PrimaryLayout() {
 	return (

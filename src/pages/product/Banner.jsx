@@ -19,6 +19,9 @@ class Banner extends Component {
 		super(props)
 		this.state = {}
 	}
+	componentWillMount(){
+		
+	}
 	render() {
 		return (
 			<div className={'bannerWrapper'}>

@@ -14,9 +14,9 @@ const Routes = () => (
 		<App />
 		<Switch >
 			<Redirect exact from= "/" to="/product"></Redirect>
-			<Route path="/product" component={Product} />
-			<Route path="/about" component={About} />
-			<Route path="/user" component={User} />
+			<Route path="/demo/product" component={Product} />
+			<Route path="/demo/about" component={About} />
+			<Route path="/demo/user" component={User} />
 		</Switch>
 	</Router>
 )

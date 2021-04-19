@@ -23,9 +23,9 @@ function PrimaryLayout() {
 				<Layout>
 					<Header>Header</Header>
 					<Content>
-						<Route path="/product" component={Product} />
-						<Route path="/about" component={Info} />
-						<Route path="/user" component={User} />
+						<Route path="/demo/product" component={Product} />
+						<Route path="/demo/about" component={Info} />
+						<Route path="/demo/user" component={User} />
 					</Content>
 				</Layout>
 			</Layout>

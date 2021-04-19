@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 const Routes = () => (
 	<Router>
 		<Route>
-			<Route path="/product" component={Product} />
-			<Route path="/about" component={About} />
-			<Route path="/user" component={User} />
+			<Route path="/demo/product" component={Product} />
+			<Route path="/demo/about" component={About} />
+			<Route path="/demo/user" component={User} />
 		</Route>
 	</Router>
 )

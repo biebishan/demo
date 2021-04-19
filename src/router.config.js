@@ -13,7 +13,7 @@ const Routes = () => (
 	<Router>
 		<App />
 		<Switch >
-			<Redirect exact from= "/" to="/product"></Redirect>
+			<Redirect exact from= "/" to="/demo/product"></Redirect>
 			<Route path="/demo/product" component={Product} />
 			<Route path="/demo/about" component={About} />
 			<Route path="/demo/user" component={User} />

@@ -6,17 +6,17 @@ import User from '@/pages/user/index'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 export const routes = [
 	{
-		path: "/product",
+		path: "/demo/product",
 		component: Product,
 		name: "Product"
 	},
 	{
-		path: "/about",
+		path: "/demo/about",
 		component: About,
 		name: "About"
 	},
 	{
-		path: "/user",
+		path: "/demo/user",
 		component: User,
 		name: "User"
 	}
@@ -26,9 +26,9 @@ export class RouteMap extends Component {
 	render() {
 		return (
 			<Route>
-				<Route path="/product" component={Product} />
-				<Route path="/about" component={About} />
-				<Route path="/user" component={User} />
+				<Route path="/demo/product" component={Product} />
+				<Route path="/demo/about" component={About} />
+				<Route path="/demo/user" component={User} />
 			</Route>
 		)
 	}

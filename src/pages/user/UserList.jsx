@@ -25,17 +25,21 @@ export default function UserList() {
 		{
 			name:'kiki',
 			age:18,
-			address:'xuhui'
+			address:'xuhui',
+			id:'tdfsf'
 		},
 		{
 			name:'linlin',
 			age:19,
-			address:'linlin'
+			address:'linlin',
+			id:'tdf11sf'
+
 		},
 		{
 			name:'cocoyu',
 			age:20,
-			address:'linlin'
+			address:'linlin',
+			id:'tdfs12erf'
 		}
 	]
 	return (
@@ -44,6 +48,7 @@ export default function UserList() {
 				columns={columns}
 				dataSource={data}
 				pagination={false}
+				rowKey={'id'}
 			/>
 			<Pagination
 				total={50}

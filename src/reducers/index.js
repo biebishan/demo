@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import apiObj from '../api'
 const initState = {
     initValue: '这是初始数据',
     listData: ['1111']

@@ -1,33 +1,32 @@
-import React, { Component } from "react";
-import { Button, Statistic } from 'antd';
-import Banner from './Banner';
-import api from '@/api/index.js'
-const {
-	getData
-} = api
+import React, { Component } from "react"
+import { Button, Statistic } from "antd"
+import Banner from "./Banner"
+import { getData } from "./api.js"
+
 class Product extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data:{}
+			data: {}
 		}
 	}
 	queryData = () => {
-		getData().then( (res) => {
-			let data = res.data;
-			this.setState({
-				data:data[0]
-			})
+		getData({}, (res) => {
+			console.log('res', res)
 		})
 	}
 	render() {
-		const { data } =this.state;
-		console.log('data', data)
+		const { data } = this.state
+		console.log("data", data)
 		return (
 			<div>
 				{/* <Banner /> */}
 				<Button onClick={this.queryData}>获取数据</Button>
-				<Statistic title="Account Balance (CNY)" value={data.gender} precision={2} />
+				<Statistic
+					title="Account Balance (CNY)"
+					value={data.gender}
+					precision={2}
+				/>
 			</div>
 		)
 	}

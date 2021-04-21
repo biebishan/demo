@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { List, Button, Input } from 'antd';
 import store from '../store/store';
-import apiObj from '../api/index'
 import { queryData, login } from '../actions'
 import './Test.less';
 import {
@@ -11,9 +10,6 @@ import {
     Link
 } from "react-router-dom";
 const { Search } = Input;
-const {
-    getData
-} = apiObj
 class Test extends Component {
     constructor(props) {
         //子类American继承父类Person，子类没用定义constrcutor,则默认添加一个，并且在constrcutor中调用super函数,相当于调用父类的构造函数。

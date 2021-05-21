@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { Table, Pagination } from "antd"
+import { connect } from 'react-redux'
+import { Table, Pagination, Button } from "antd"
 import qrBcg from "@assets/erWeiCode.png"
 import QRCode from "qrcode-react"
 import './UserList.less'
-export default function UserList() {
+function UserList() {
 	const columns = [
 		{
 			title: "姓名",
@@ -54,6 +55,8 @@ export default function UserList() {
 				total={50}
 				showSizeChanger
 			/>	 
+			<Button>测试</Button>
 		</div>
 	)
 }
+export default connect()(UserList)

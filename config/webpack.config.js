@@ -136,13 +136,13 @@ module.exports = function (webpackEnv) {
 		devServer: {
 			proxy: {
 				"/api": "http://localhost:3333"
-      },
-      contentBase: path.join(__dirname, 'public'), // boolean | string | array, static file location
-      compress: true, // enable gzip compression
-      historyApiFallback: true, // true for index.html upon 404, object for multiple paths
-      hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
-      https: false, // true for self-signed, object for cert authority
-      noInfo: true, // only errors & warns on hot reload
+			},
+			contentBase: path.join(__dirname, "public"), // boolean | string | array, static file location
+			compress: true, // enable gzip compression
+			historyApiFallback: true, // true for index.html upon 404, object for multiple paths
+			hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
+			https: false, // true for self-signed, object for cert authority
+			noInfo: true // only errors & warns on hot reload
 		},
 		mode: isEnvProduction
 			? "production"
@@ -328,7 +328,7 @@ module.exports = function (webpackEnv) {
 			plugins: [
 				// Adds support for installing with Plug'n'Play, leading to faster installs and adding
 				// guards against forgotten dependencies and such.
-				PnpWebpackPlugin,
+				PnpWebpackPlugin
 				// Prevents users from importing files from outside of src/ (or node_modules/).
 				// This often causes confusion because we only process files within src/ with babel.
 				// To fix this, we prevent you from importing files out of src/ -- if you'd like to,
@@ -526,7 +526,10 @@ module.exports = function (webpackEnv) {
 								{
 									importLoaders: 3,
 									sourceMap:
-										isEnvProduction && shouldUseSourceMap
+										isEnvProduction && shouldUseSourceMap,
+									modules: {
+										getLocalIdent: getCSSModuleLocalIdent
+									}
 								},
 								"less-loader"
 							),

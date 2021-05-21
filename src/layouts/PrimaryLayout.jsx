@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from "react"
 import { Layout, Button, Transfer, Tree, Icon } from "antd"
-import "./PrimaryLayout.less"
+import styles from "./PrimaryLayout.less"
 import Side from "@component/Side"
 import Product from "@/pages/product/index";
 import Info from "@/pages/about/index";
@@ -15,13 +15,13 @@ import {
 const { Header, Footer, Sider, Content } = Layout
 function PrimaryLayout() {
 	return (
-		<div className="primaryLayout">
+		<div className={styles.primaryLayout}>
 			<Layout>
 				<Sider>
 					<Side />
 				</Sider>
 				<Layout>
-					<Header>Header</Header>
+					<Header>文章</Header>
 					<Content>
 						<Route path="/demo/product" component={Product} />
 						<Route path="/demo/about" component={Info} />

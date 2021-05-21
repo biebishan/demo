@@ -25,26 +25,6 @@ class Banner extends Component {
 	render() {
 		return (
 			<div className={'bannerWrapper'}>
-				<Carousel autoplay>
-					<div>
-						<img src={night} alt="" />
-					</div>
-					<div>
-						<img src={gun} alt="" />
-					</div>
-					<div>
-						<img src={technology} alt="" />
-					</div>
-					<div>
-						<img src={war} alt="" />
-					</div>
-					<div>
-						<img src={planet} alt="" />
-					</div>
-					<div>
-						<img src={city} alt="" />
-					</div>
-				</Carousel>
 			</div>
 		)
 	}

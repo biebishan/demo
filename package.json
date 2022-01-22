@@ -105,7 +105,7 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^1.0.5",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   },
   "jest": {
     "roots": [
